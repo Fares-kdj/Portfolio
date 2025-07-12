@@ -14,7 +14,9 @@
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./assets/css/styles.css">
+      <link rel="stylesheet" href="./assets/css/style1.css">
+         <!-- Swiper.js CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
       <title>Fares KOUIDER-DJELLOUL</title>
    </head>
@@ -227,85 +229,202 @@
             </div>
          </section>
 
-         <!--==================== WORK ====================-->
-         <section class="work section">
-            <h2 class="section__title">
-               My Most <br>
-               Recent Works 
-            </h2>
+<!--==================== WORK ====================-->
+<section class="tm-portfolio">
+    <h2 class="section__title">
+        My Most <br>
+        Recent Works 
+    </h2>
 
-            <div class="work__container container grid">
-               <article class="work__card">
-                  <a href="https://picenp.rf.gd/" target="_blank" class="work__link">
-                     <img src="assets/img/work-1.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
+    <!-- Filter Buttons -->
+    <div class="filter-wrapper">
+        <ul>
+            <li><a href="javascript:void(0);" class="selected" data-filter="*">All</a></li>
+            <li><a href="javascript:void(0);" data-filter=".design">Design</a></li>
+            <li><a href="javascript:void(0);" data-filter=".web_development">Web Development</a></li>
+            <li><a href="javascript:void(0);" data-filter=".filmmaking">Filmmaking</a></li>
+            <li><a href="javascript:void(0);" data-filter=".video_editing">Video Editing</a></li>
+        </ul>
+    </div>
 
-                  <h2 class="work__title">PIC_Club Website</h2>
-                  <span class="work__subtitle">Website Developement</span>
-               </article>
+    <div class="iso-box-section">
+        <div class="iso-box-wrapper grid">
+            <?php
+            // Include the database connection
+            include './portfolio/includes/db.php';
 
-               <article class="work__card">
-                  <a href="https://polyintegral.kesug.com" target="_blank" class="work__link">
-                     <img src="assets/img/work-2.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
+            // Fetch projects and their associated files from the database
+            $sql = "
+                SELECT p.id, p.title, p.description, p.category, pf.file_path, pf.file_type 
+                FROM projects p 
+                LEFT JOIN project_files pf ON p.id = pf.project_id
+                ORDER BY p.id DESC
+            ";
+            $stmt = $conn->query($sql);
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                  <h2 class="work__title">Polyintegral_2.0 Website</h2>
-                  <span class="work__subtitle">Website Developement</span>
-               </article>
-               <article class="work__card">
-                  <a href="https://midophone.Store" target="_blank" class="work__link">
-                     <img src="assets/img/work-2.1.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
+            // Group files by project
+            $projects = [];
+            foreach ($results as $row) {
+                $project_id = $row['id'];
+                if (!isset($projects[$project_id])) {
+                    $projects[$project_id] = [
+                        'title' => $row['title'],
+                        'description' => $row['description'],
+                        'category' => $row['category'],
+                        'files' => []
+                    ];
+                }
+                if ($row['file_path']) {
+                    $projects[$project_id]['files'][] = [
+                        'file_path' => './portfolio/uploads/' . basename($row['file_path']),
+                        'file_type' => $row['file_type']
+                    ];
+                }
+            }
 
-                  <h2 class="work__title">MidoPhone_Store Website</h2>
-                  <span class="work__subtitle">Website Developement</span>
-               </article>
+            if (!empty($projects)) {
+                foreach ($projects as $project_id => $project):
+                    $first_file = !empty($project['files']) ? $project['files'][0] : null;
+            ?>
+                    <div class="iso-box <?php echo htmlspecialchars($project['category']); ?>">
+                        <?php if ($first_file): ?>
+                            <a href="javascript:void(0);" class="work__link" data-project-id="<?php echo $project_id; ?>" onclick="openModal(<?php echo $project_id; ?>)">
+                                <?php if (strpos($first_file['file_type'], 'image/') === 0): ?>
+                                    <img src="<?php echo $first_file['file_path']; ?>" alt="<?php echo htmlspecialchars($project['title']); ?>" class="work__img">
+                                <?php elseif (strpos($first_file['file_type'], 'video/') === 0): ?>
+                                    <img src="assets/img/video-placeholder.png" alt="<?php echo htmlspecialchars($project['title']); ?>" class="work__img">
+                                <?php endif; ?>
+                                <i class="ri-arrow-right-circle-line work__icon"></i>
+                            </a>
+                        <?php endif; ?>
+                        <h2 class="work__title"><?php echo htmlspecialchars($project['title']); ?></h2>
+                        <span class="work__subtitle"><?php echo htmlspecialchars($project['category']); ?></span>
+                    </div>
+                <?php endforeach; ?>
+            <?php } else { ?>
+                <p>No projects to display.</p>
+            <?php } ?>
+        </div>
+    </div>
 
-               <article class="work__card">
-                  <a href="https://drive.google.com/drive/folders/1l06iN3AdaMe5U82vR3_3X9ZjhuaTqcmt?usp=sharing" target="_blank" class="work__link">
-                     <img src="assets/img/work-3.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
-
-                  <h2 class="work__title">Events</h2>
-                  <span class="work__subtitle">Graphic Designer</span>
-               </article>
-
-               <article class="work__card">
-                  <a href="https://drive.google.com/drive/folders/1eYlFeNZfpOMbHyCwTFtuu8StQLs0onBK?usp=sharing" target="_blank" class="work__link">
-                     <img src="assets/img/work-4.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
-
-                  <h2 class="work__title"> MH Clothing Company.</h2>
-                  <span class="work__subtitle">Graphic Designer</span>
-               </article>
-
-               <!-- <article class="work__card">
-                  <a href="#" target="_blank" class="work__link">
-                     <img src="assets/img/work-5.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
-
-                  <h2 class="work__title">Algérie Télécom</h2>
-                  <span class="work__subtitle">Network Administration and Security</span>
-               </article> -->
-
-               <!-- <article class="work__card">
-                  <a href="#" target="_blank" class="work__link">
-                     <img src="assets/img/work-6.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-circle-line work__icon"></i>
-                  </a>
-
-                  <h2 class="work__title">Algérie Poste</h2>
-                  <span class="work__subtitle">Network Administration and Security</span>
-               </article> -->
+    <!-- Modal for carousel and description -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <div class="swiper">
+                <div class="swiper-wrapper" id="modalSlides"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
-         </section>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 
+    <!-- Swiper.js and Isotope.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Other scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+
+    <script>
+        // Initialize Isotope
+        $(document).ready(function() {
+            $('.iso-box-wrapper').isotope({
+                itemSelector: '.iso-box',
+                layoutMode: 'fitRows'
+            });
+
+            // Filter items on button click
+            $('.filter-wrapper a').click(function() {
+                var filterValue = $(this).attr('data-filter');
+                $('.iso-box-wrapper').isotope({ filter: filterValue });
+                $('.filter-wrapper a').removeClass('selected');
+                $(this).addClass('selected');
+                return false;
+            });
+        });
+
+        // Store projects data for JavaScript access
+        const projects = <?php echo json_encode($projects); ?>;
+        let swiperInstance = null;
+
+        function openModal(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            // Set modal title and description
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalDescription').textContent = project.description;
+
+            // Clear previous slides
+            const slidesContainer = document.getElementById('modalSlides');
+            slidesContainer.innerHTML = '';
+
+            // Add slides for each file
+            project.files.forEach(file => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                if (file.file_type.startsWith('image/')) {
+                    slide.innerHTML = `<img src="${file.file_path}" alt="${project.title}" style="max-width: 100%; height: auto;">`;
+                } else if (file.file_type.startsWith('video/')) {
+                    slide.innerHTML = `<video controls style="max-width: 100%; height: auto;">
+                        <source src="${file.file_path}" type="${file.file_type}">
+                        Your browser does not support the video tag.
+                    </video>`;
+                }
+                slidesContainer.appendChild(slide);
+            });
+
+            // Destroy previous Swiper instance if it exists
+            if (swiperInstance && typeof swiperInstance.destroy === 'function') {
+                swiperInstance.destroy(true, true);
+                swiperInstance = null;
+            }
+
+            // Initialize Swiper
+            swiperInstance = new Swiper('.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: project.files.length > 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Show modal
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+            // Destroy Swiper instance on close to prevent memory leaks
+            if (swiperInstance && typeof swiperInstance.destroy === 'function') {
+                swiperInstance.destroy(true, true);
+                swiperInstance = null;
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+</section>
          <!--==================== TESTIMONIAL ====================-->
          <section class="testimonial section">
             <h2 class="section__title">
@@ -449,5 +568,7 @@
 
       <!--=============== INDEX JS ===============-->
       <script src="assets/js/index.js"></script>
+
+    
    </body>
 </html>
