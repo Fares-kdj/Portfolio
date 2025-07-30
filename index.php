@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="./assets/css/style1.css">
+      <link rel="stylesheet" href="./assets/css/style3.css">
          <!-- Swiper.js CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -24,12 +24,12 @@
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <a href="index.html" class="nav__logo">Fares KDJ</a>
+            <a href="index.php" class="nav__logo">Fares KDJ</a>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a href="index.html" class="nav__link">Home</a>
+                     <a href="index.php" class="nav__link">Home</a>
                   </li>
 
                   <li class="nav__item">
@@ -37,7 +37,7 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="work.html" class="nav__link">Portfolio</a>
+                     <a href="work.php" class="nav__link">Portfolio</a>
                   </li>
 
                   <li class="nav__item">
@@ -242,8 +242,8 @@
             <li><a href="javascript:void(0);" class="selected" data-filter="*">All</a></li>
             <li><a href="javascript:void(0);" data-filter=".design">Design</a></li>
             <li><a href="javascript:void(0);" data-filter=".web_development">Web Development</a></li>
-            <li><a href="javascript:void(0);" data-filter=".filmmaking">Filmmaking</a></li>
-            <li><a href="javascript:void(0);" data-filter=".video_editing">Video Editing</a></li>
+            <li><a href="javascript:void(0);" data-filter=".Adsmanager">.Ads Manager</a></li>
+            <li><a href="javascript:void(0);" data-filter=".Networking">Networking</a></li>
         </ul>
     </div>
 
@@ -325,9 +325,153 @@
 
     <!-- Swiper.js and Isotope.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+</section>
+         <!--==================== TESTIMONIAL ====================-->
+         <section class="testimonial section">
+            <h2 class="section__title">
+               What They Say <br> 
+               About Me? 
+            </h2>
+
+            <div class="testimonial__container container">
+               <div class="testimonial__swiper swiper">
+                  <div class="swiper-wrapper">
+                     <article class="testimonial__card swiper-slide">
+                        <div class="testimonial__border">
+                           <img src="assets/img/testimonial-1.png" alt="image" class="testimonial__img">
+                        </div>
+
+                        <h2 class="testimonial__name">Fouad BOUKLI HACENE</h2>
+                        <p class="testimonial__description">
+                           This dedicated engineering student shines bright with his steadfast dedication to his community,
+                            showcasing a profound sense of collective responsibility.
+                             Eager to utilize his skills for the betterment of others,
+                              he exemplifies a genuine regard for diversity, inclusion, and fairness,
+                                while consistently demonstrating empathy and compassion towards everyone he encounters
+                        </p>
+                     </article>
+
+                     <article class="testimonial__card swiper-slide">
+                        <div class="testimonial__border">
+                           <img src="assets/img/testimonial-2.png" alt="image" class="testimonial__img">
+                        </div>
+
+                        <h2 class="testimonial__name">Manel HAMIANI</h2>
+                        <p class="testimonial__description">
+                           This engineering student, specializing in computer networks, 
+                           stands out for his dedication to utilizing his skills for the benefit of others.
+                            He shows a strong commitment to community engagement, demonstrating a deep respect for diversity and inclusivity. 
+                            His empathy and compassion towards everyone around him are truly admirable.
+                        </p>
+                     </article>
+
+                     <article class="testimonial__card swiper-slide">
+                        <div class="testimonial__border">
+                           <img src="assets/img/testimonial-3.png" alt="image" class="testimonial__img">
+                        </div>
+
+                        <h2 class="testimonial__name">Mohammed Amin CHARCHAL </h2>
+                        <p class="testimonial__description">
+                           I have worked with Fares for 4 years within the framework of the pic club that we manage.
+                           I can summarize my experience with him as excellent in all aspects,
+                            as he is suitable for all tasks at all times and under any circumstances.
+                        </p>
+                     </article>
+
+                     <article class="testimonial__card swiper-slide">
+                        <div class="testimonial__border">
+                           <img src="assets/img/testimonial-4.png" alt="image" class="testimonial__img">
+                        </div>
+
+                        <h2 class="testimonial__name">Abdelhak BENDJEBARA</h2>
+                        <p class="testimonial__description">
+                           I've known Fares for 3 years , and his expertise in computer networks and telecommunications is impressive.
+                            He's a problem-solving expert with exceptional technical skills, a great communicator, and a motivating leader.
+                             His dedication to excellence and positive attitude make him a valuable asset to any team.
+                        </p>
+                     </article>
+                  </div>
+               </div>
+
+                <!-- Pagination -->
+               <div class="swiper-pagination"></div>
+            </div>
+         </section>
+
+         <!--==================== CONTACT ====================-->
+         <section class="contact section">
+            <div class="contact__container container grid">
+               <h2 class="section__title">
+                  Let's Talk <br>
+                  About Your Project 
+               </h2>
+
+               <a href="contact.html" class="contact__button button">Contact Me</a>
+            </div>
+         </section>
+      </main>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <div class="footer__content grid">
+               <a href="index.php" class="footer__logo">Fares KDJ</a>
+
+               <ul class="footer__links">
+                  <li>
+                     <a href="about.html" class="footer__link">About Me</a>
+                  </li>
+
+                  <li>
+                     <a href="work.php" class="footer__link">Portfolio</a>
+                  </li>
+
+                  <li>
+                     <a href="contact.html" class="footer__link">Contact Me</a>
+                  </li>
+               </ul>
+
+               <div class="footer__social">
+                  <a href="https://www.facebook.com/viscaa.barca.37?locale=fr_FR" target="_blank" class="footer__social-link">
+                     <i class="ri-facebook-circle-fill"></i>
+                  </a>
+
+                  <a href="https://www.instagram.com/fares.kdj/" target="_blank" class="footer__social-link">
+                     <i class="ri-instagram-fill"></i>
+                  </a>
+
+                  <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                     <i class="ri-twitter-x-fill"></i>
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/fares-kouider-djelloul-173305260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer__social-link">
+                     <i class="ri-linkedin-box-fill"></i>
+                  </a>
+               </div>
+            </div>
+
+            <span class="footer__copy">
+               &#169; All Rights Reserved By Fares.KDJ
+            </span>
+         </div>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+         <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+         </a>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== INDEX JS ===============-->
+      <script src="assets/js/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Other scripts -->
     <script src="assets/js/main.js"></script>
@@ -424,150 +568,6 @@
             }
         };
     </script>
-</section>
-         <!--==================== TESTIMONIAL ====================-->
-         <section class="testimonial section">
-            <h2 class="section__title">
-               What They Say <br> 
-               About Me? 
-            </h2>
-
-            <div class="testimonial__container container">
-               <div class="testimonial__swiper swiper">
-                  <div class="swiper-wrapper">
-                     <article class="testimonial__card swiper-slide">
-                        <div class="testimonial__border">
-                           <img src="assets/img/testimonial-1.png" alt="image" class="testimonial__img">
-                        </div>
-
-                        <h2 class="testimonial__name">Fouad BOUKLI HACENE</h2>
-                        <p class="testimonial__description">
-                           This dedicated engineering student shines bright with his steadfast dedication to his community,
-                            showcasing a profound sense of collective responsibility.
-                             Eager to utilize his skills for the betterment of others,
-                              he exemplifies a genuine regard for diversity, inclusion, and fairness,
-                                while consistently demonstrating empathy and compassion towards everyone he encounters
-                        </p>
-                     </article>
-
-                     <article class="testimonial__card swiper-slide">
-                        <div class="testimonial__border">
-                           <img src="assets/img/testimonial-2.png" alt="image" class="testimonial__img">
-                        </div>
-
-                        <h2 class="testimonial__name">Manel HAMIANI</h2>
-                        <p class="testimonial__description">
-                           This engineering student, specializing in computer networks, 
-                           stands out for his dedication to utilizing his skills for the benefit of others.
-                            He shows a strong commitment to community engagement, demonstrating a deep respect for diversity and inclusivity. 
-                            His empathy and compassion towards everyone around him are truly admirable.
-                        </p>
-                     </article>
-
-                     <article class="testimonial__card swiper-slide">
-                        <div class="testimonial__border">
-                           <img src="assets/img/testimonial-3.png" alt="image" class="testimonial__img">
-                        </div>
-
-                        <h2 class="testimonial__name">Mohammed Amin CHARCHAL </h2>
-                        <p class="testimonial__description">
-                           I have worked with Fares for 4 years within the framework of the pic club that we manage.
-                           I can summarize my experience with him as excellent in all aspects,
-                            as he is suitable for all tasks at all times and under any circumstances.
-                        </p>
-                     </article>
-
-                     <article class="testimonial__card swiper-slide">
-                        <div class="testimonial__border">
-                           <img src="assets/img/testimonial-4.png" alt="image" class="testimonial__img">
-                        </div>
-
-                        <h2 class="testimonial__name">Abdelhak BENDJEBARA</h2>
-                        <p class="testimonial__description">
-                           I've known Fares for 3 years , and his expertise in computer networks and telecommunications is impressive.
-                            He's a problem-solving expert with exceptional technical skills, a great communicator, and a motivating leader.
-                             His dedication to excellence and positive attitude make him a valuable asset to any team.
-                        </p>
-                     </article>
-                  </div>
-               </div>
-
-                <!-- Pagination -->
-               <div class="swiper-pagination"></div>
-            </div>
-         </section>
-
-         <!--==================== CONTACT ====================-->
-         <section class="contact section">
-            <div class="contact__container container grid">
-               <h2 class="section__title">
-                  Let's Talk <br>
-                  About Your Project 
-               </h2>
-
-               <a href="contact.html" class="contact__button button">Contact Me</a>
-            </div>
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         <div class="footer__container container grid">
-            <div class="footer__content grid">
-               <a href="index.html" class="footer__logo">Fares KDJ</a>
-
-               <ul class="footer__links">
-                  <li>
-                     <a href="about.html" class="footer__link">About Me</a>
-                  </li>
-
-                  <li>
-                     <a href="work.html" class="footer__link">Portfolio</a>
-                  </li>
-
-                  <li>
-                     <a href="contact.html" class="footer__link">Contact Me</a>
-                  </li>
-               </ul>
-
-               <div class="footer__social">
-                  <a href="https://www.facebook.com/viscaa.barca.37?locale=fr_FR" target="_blank" class="footer__social-link">
-                     <i class="ri-facebook-circle-fill"></i>
-                  </a>
-
-                  <a href="https://www.instagram.com/fares.kdj/" target="_blank" class="footer__social-link">
-                     <i class="ri-instagram-fill"></i>
-                  </a>
-
-                  <a href="https://twitter.com/" target="_blank" class="footer__social-link">
-                     <i class="ri-twitter-x-fill"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/fares-kouider-djelloul-173305260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer__social-link">
-                     <i class="ri-linkedin-box-fill"></i>
-                  </a>
-               </div>
-            </div>
-
-            <span class="footer__copy">
-               &#169; All Rights Reserved By Fares.KDJ
-            </span>
-         </div>
-      </footer>
-
-      <!--========== SCROLL UP ==========-->
-         <a href="#" class="scrollup" id="scroll-up">
-            <i class="ri-arrow-up-line"></i>
-         </a>
-
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-
-      <!--=============== SWIPER JS ===============-->
-      <script src="assets/js/swiper-bundle.min.js"></script>
-
-      <!--=============== INDEX JS ===============-->
-      <script src="assets/js/index.js"></script>
 
     
    </body>

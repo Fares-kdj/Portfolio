@@ -2,7 +2,7 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
-    if ($password === '123') { // Simple password
+    if ($password === 'Fares123') { // Simple password
         $_SESSION['logged_in'] = true;
         header('Location: dashboard.php');
         exit(); // Ensure the script stops after redirection
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./login.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="./logi.css"> <!-- Link to your CSS file -->
     <!-- Add FontAwesome for the eye icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>

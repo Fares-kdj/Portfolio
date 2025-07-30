@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/style1.css">
+      <link rel="stylesheet" href="assets/css/style3.css">
 
       <title>Fares KOUIDER-DJELLOUL</title>
    </head>
@@ -19,12 +19,12 @@
       <!--==================== HEADER ====================-->
       <header class="header header-pages" id="header">
          <nav class="nav container">
-            <a href="index.html" class="nav__logo">Fares KDJ</a>
+            <a href="index.php" class="nav__logo">Fares KDJ</a>
 
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a href="index.html" class="nav__link">Home</a>
+                     <a href="index.php" class="nav__link">Home</a>
                   </li>
 
                   <li class="nav__item">
@@ -32,7 +32,7 @@
                   </li>
 
                   <li class="nav__item">
-                     <a href="work.html" class="nav__link">Portfolio</a>
+                     <a href="work.php" class="nav__link">Portfolio</a>
                   </li>
 
                   <li class="nav__item">
@@ -72,8 +72,8 @@
             <li><a href="javascript:void(0);" class="selected" data-filter="*">All</a></li>
             <li><a href="javascript:void(0);" data-filter=".design">Design</a></li>
             <li><a href="javascript:void(0);" data-filter=".web_development">Web Development</a></li>
-            <li><a href="javascript:void(0);" data-filter=".filmmaking">Filmmaking</a></li>
-            <li><a href="javascript:void(0);" data-filter=".video_editing">Video Editing</a></li>
+            <li><a href="javascript:void(0);" data-filter=".Adsmanager">Ads Manager</a></li>
+            <li><a href="javascript:void(0);" data-filter=".Networking">Networking</a></li>
         </ul>
     </div>
 
@@ -261,7 +261,7 @@
       <footer class="footer">
          <div class="footer__container container grid">
             <div class="footer__content grid">
-               <a href="index.html" class="footer__logo">Fares KDJ</a>
+               <a href="index.php" class="footer__logo">Fares KDJ</a>
 
                <ul class="footer__links">
                   <li>
@@ -269,7 +269,7 @@
                   </li>
 
                   <li>
-                     <a href="work.html" class="footer__link">Portfolio</a>
+                     <a href="work.php" class="footer__link">Portfolio</a>
                   </li>
 
                   <li>
